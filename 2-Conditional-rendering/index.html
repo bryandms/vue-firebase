@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <main>
+        <template v-if="connected">
+            <h2>Welcome!</h2>
+            <p>Are you connected. &#x1F603;</p>
+
+            <h2 v-if="age < 6">Early Childhood.</h2>
+            <h2 v-else-if="age < 12">Childhood.</h2>
+            <h2 v-else-if="age < 19">Adolescence.</h2>
+            <h2 v-else-if="age < 27">Youth.</h2>
+            <h2 v-else-if="age < 60">Adultez.</h2>
+            <h2 v-else>Older person.</h2>
+        </template>
+        <p v-else>You're not online. &#x1F614;</p>
+
+        <pre>{{ $data }}</pre>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
