@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- Instance 1 -->
+    <main>
+        <p v-text="message"></p>
+        <button @click="reverse">Reverse</button>
+        <button @click="reverse2">Reverse Instance 2 from Instance 1</button>
+
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <!-- Instance 2 -->
+    <div id="app">
+        <p>{{ message }}</p>
+
+        <pre>{{ $data }}</pre>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
