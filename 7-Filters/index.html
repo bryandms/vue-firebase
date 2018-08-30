@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <main>
+        <input type="search" v-model="search" placeholder="Search">
+        <ul>
+            <li v-for="team in searchTeam">
+                {{ team.name | toUpperCase }}
+            </li>
+        </ul>
+
+        <input type="range" min="1600" max="1730" v-model="min">
+
+        <pre>{{ $data }}</pre>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
