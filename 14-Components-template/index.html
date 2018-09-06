@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <main>
+        <!-- Inline template -->
+        <choose-member :band="gretaVanFleet" inline-template>
+            <div>
+                <h3 v-if="member">The elected is: {{ member }}</h3>
+                <template v-else>
+                    <h3>Greta Van Fleet</h3>
+                    <ul>
+                        <li v-for="elected in band">{{ elected }}</li>
+                    </ul>
+                    <button @click="chooseMember">Choose member</button>
+                </template>
+            </div>
+        </choose-member>
+
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <!-- Template located in the DOM -->
+    <!-- <template id="choose-member-template">
+        <div>
+            <h3 v-if="member">The elected is: {{ member }}</h3>
+            <template v-else>
+                <h3>Greta Van Fleet</h3>
+                <ul>
+                    <li v-for="elected in band">{{ elected }}</li>
+                </ul>
+                <button @click="chooseMember">Choose member</button>
+            </template>
+        </div>
+    </template> -->
+
+    <!-- Template with script tag -->
+    <!-- <script id="choose-member-template" type="text/template">
+        <div>
+            <h3 v-if="member">The elected is: {{ member }}</h3>
+            <template v-else>
+                <h3>Greta Van Fleet</h3>
+                <ul>
+                    <li v-for="elected in band">{{ elected }}</li>
+                </ul>
+                <button @click="chooseMember">Choose member</button>
+            </template>
+        </div>
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
