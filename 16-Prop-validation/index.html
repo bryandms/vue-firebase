@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <main>
+        <people v-for="(person, index) in people"
+                :name="person.name.first"
+                :email="person.email"
+                :image="person.picture.thumbnail"
+                :key="index">
+        </people>
+
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <template id="people-template">
+        <blockquote>
+            <img :src="image" align="right">
+            <h4>{{ name }}</h4>
+            <p>{{ email }}</p>
+            <ul>
+                <li v-for="(value, key, index) in location" :key="index">
+                    {{ value }}
+                </li>
+            </ul>
+            <hr>
+        </blockquote>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
