@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <main>
+        <my-tasks :list="tasks">
+            <template slot="task" slot-scope="props">
+                <li>
+                    <h4>{{ props.title }}</h4>
+                </li>
+            </template>
+        </my-tasks>
+
+        <my-tasks :list="tasks">
+            <template slot="task" slot-scope="props">
+                <li>{{ props.title }}</li>
+            </template>
+        </my-tasks>
+
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <!-- Template -->
+    <template id="my-tasks-template">
+        <ul>
+            <slot name="task" v-for="task in list" :title="task.title"></slot>
+        </ul>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
