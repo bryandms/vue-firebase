@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <button @click="showWarning = true">Warning</button>
+        <button @click="showSuccess = true">Success</button>
+        <button @click="showDanger = true">Danger</button>
+
+        <alert @hide="showWarning = false" v-show="showWarning" type="alert-warning" position="alert-top-left">
+            <template slot="header">Warning</template>
+            <template>Alert Warning</template>
+            <template slot="footer">Warning</template>
+        </alert>
+
+        <alert @hide="showSuccess = false" v-show="showSuccess" type="alert-success" position="alert-top-right">
+            <template slot="header">Success</template>
+            <template>Alert Success</template>
+            <template slot="footer">Success</template>
+        </alert>
+
+        <alert @hide="showDanger = false" v-show="showDanger" type="alert-danger" position="alert-bottom-left">
+        </alert>
+
+        <pre>{{ $data }}</pre>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
